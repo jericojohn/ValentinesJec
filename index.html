@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffccd5;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+        .emoji {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <h1>Can you be my Valentine? ❤️</h1>
+        <button onclick="chooseYes()">Yes</button>
+        <button onclick="chooseNo()">No</button>
+        
+        <div id="sad-response" class="hidden">
+            <p class="emoji">😢</p>
+            <p>Are you sure?</p>
+            <button onclick="chooseYes()">Yes</button>
+            <button onclick="chooseNo()">No</button>
+        </div>
+        
+        <div id="happy-response" class="hidden">
+            <p class="emoji">🥰😍💕</p>
+            <p>Yay! You made me the happiest! ❤️</p>
+            <button onclick="chooseNo()">No</button>
+            <button onclick="chooseReally()">Really!!</button>
+        </div>
+        
+        <div id="love-response" class="hidden">
+            <img src="https://source.unsplash.com/600x400/?love,romantic" alt="I Love You">
+            <h1>I Love You! ❤️</h1>
+        </div>
+    </div>
+
+    <script>
+        function chooseYes() {
+            document.getElementById("happy-response").classList.remove("hidden");
+            document.getElementById("sad-response").classList.add("hidden");
+        }
+        function chooseNo() {
+            document.getElementById("sad-response").classList.remove("hidden");
+            document.getElementById("happy-response").classList.add("hidden");
+        }
+        function chooseReally() {
+            document.getElementById("main-container").innerHTML = '<img src="https://source.unsplash.com/600x400/?love,romantic" alt="I Love You"><h1>I Love You! ❤️</h1>';
+        }
+    </script>
+</body>
+</html>
